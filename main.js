@@ -7,8 +7,11 @@ let hexGreen = "#00d600"
 let hexYellow = "#deee00"
 let hexGray = "#ccc"
 
+let uselessKeys = [6,16,18,24] //sumbit, shift, crtl, alt
+
 function setupPage() {
     //setup look-controls
+    byeByeKeys(uselessKeys)
     document.querySelector("a-camera").setAttribute('look-controls', { "magicWindowTrackingEnabled": false, "touchEnabled": false, "mouseEnabled": false });
     if (AFRAME.utils.isMobile()) {
         //setup for mobile
@@ -20,7 +23,12 @@ function setupPage() {
         document.querySelector("a-camera").setAttribute('zoom', "0.5");
     }
 }
-
+function byeByeKeys(keys) {
+    //remove useless keys
+    for (var i = 0; i < keys.length; i++) { 
+        document.querySelector("#a-keyboard-" + keys[i]).parentElement.remove();
+    }
+}
 function processText(text) {
     var colors = [];
     let colorsByKeyCode = [];
@@ -89,7 +97,7 @@ function updateInput(e) {
         case 8:
             input = input.slice(0, -1)
             break
-        case 6:
+        case 13:
             //check if input is a vaild word
             if (WORDS.includes(input)) {
                 //If it is, process it.
@@ -109,8 +117,6 @@ function updateInput(e) {
                 document.querySelector('#input').setAttribute('color', "#f04")
             }
             return
-        case 13:
-            break
         case 16:
             break
         case 32:
@@ -124,6 +130,7 @@ function updateInput(e) {
     //ensure text color is black, and set text on input element
     document.querySelector('#input').setAttribute('color', "#fff")
     document.querySelector('#input').setAttribute('value', input)
+    byeByeKeys(uselessKeys)
 }
 document.addEventListener('a-keyboard-update', updateInput)
-document.addEventListener("DOMContentLoaded", setupPage);
+document.querySelector('a-scene').addEventListener('loaded', setupPage)
