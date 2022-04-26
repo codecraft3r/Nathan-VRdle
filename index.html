@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, viewport-fit=cover">
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="./aframe-keyboard.min.js"></script>
+  <script type="module" src="./words.js"></script>
+  <script type="module" src="./main.js"></script>
+  <title>Keyboard Sample</title>
+  <style>
+    body {
+      font-size: 62.5%;
+      overflow: hidden;
+    }
+
+    html,
+    body,
+    canvas {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <a-scene id="scene" keyboard-shortcuts="enterVR: false">
+    <!-- environment -->
+    <a-assets>
+      <img id="space" src="./starmap_4k.jpg">
+    </a-assets>
+    <a-camera position="0.05 1.42 0.7" wasd-controls-enabled="false" near="0.005"></a-camera>
+    <a-sky src="#space"></a-sky>
+    <!-- wordle board -->
+    <a-entity id="row1" position="0.15 1.75 -1">
+      <a-entity class="charDisplay" position="-0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="-0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+    </a-entity>
+    <a-entity id="row2" position="0.15 1.4 -1">
+      <a-entity class="charDisplay" position="-0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="-0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+    </a-entity>
+    <a-entity id="row3" position="0.15 1.05 -1">
+      <a-entity class="charDisplay" position="-0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="-0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+    </a-entity>
+    <a-entity id="row4" position="0.15 0.7 -1">
+      <a-entity class="charDisplay" position="-0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="-0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+    </a-entity>
+    <a-entity id="row5" position="0.15 0.35 -1">
+      <a-entity class="charDisplay" position="-0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="-0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+    </a-entity>
+    <a-entity id="row6" position="0.15 0 -1">
+      <a-entity class="charDisplay" position="-0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="-0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.35 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+      <a-entity class="charDisplay" position="0.7 2 -1.5" text="value:; align: center; width: 5; color: #000;">
+        <a-plane class="charBackdrop" position="0.003 -0.003 -0.001" width="0.25" height="0.25" depth="0.1" color="#fff"></a-plane>
+        <a-plane class="charBorder" position="0.003 -0.003 -0.002" width="0.30" height="0.30" depth="0.1" color="#000"></a-plane>
+      </a-entity>
+    </a-entity>
+    <!-- VR -->
+    <a-entity laser-controls="hand: right" raycaster="far: 100; lineColor: white;"></a-entity>
+    <!-- keyboard -->
+    <a-text id="victory" font="dejavu" color="#00d600" value="" scale="0.5 0.5 0.5" position="-0.221 1.2 -0.7"></a-text>
+    <a-text id="input" font="dejavu" color="#fff" value="VRdle" scale="0.5 0.5 0.5" position="-0.1 1.2 -0.7"></a-text>
+    <a-entity id="keyboard" rotation="-45 0 0" scale="1.8 1.5 1.8" position="-0.38 1 -0.5" a-keyboard>
+    </a-entity>
+
+    <!-- Mouse input -->
+    <a-entity id="mouseCursor" raycaster="objects: .collidable" cursor="rayOrigin: mouse; fuseTimeout: 0;"></a-entity>
+  </a-scene>
+
+  <noscript>Please turn on Javascript to view this website.</noscript>
+</body>
+
+</html>
