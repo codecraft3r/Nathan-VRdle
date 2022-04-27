@@ -1,6 +1,8 @@
 # VRdle
 It's wordle in VR!
 
+Live at https://vrdle.netlify.app
+
 # Credits
 [A-Frame](https://aframe.io)
 
